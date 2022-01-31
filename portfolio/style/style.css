@@ -918,6 +918,12 @@ body {
     padding: 0;
 }
 
+.footer-about-developer-text {
+
+    text-decoration: none;
+    color: #fff;
+}
+
 @media (max-width: 768px) {
     .footer-about-developer-text {
         margin-right: 2px;
