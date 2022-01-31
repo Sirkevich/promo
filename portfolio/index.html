@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./style/normalize.css">
     <link rel="stylesheet" href="./style/style.css">
 </head>
-<body>
+<body class="body">
     <header>
         <div class="header-container container">
             <div class="logo main-icon">
@@ -27,11 +27,16 @@
                     <div class="language">
                         <a href="#" class="language-link language-link-active">en</a><span class="language-text">/</span><a href="#" class="language-link nav-link">ru</a>
                     </div>
+                    <div class="change-theme">
+                        <button class="theme-btn"></button>
+                    </div>
                     <div class="hamburger">
                         <div class="line line1"></div>
                         <div class="line line2"></div>
                         <div class="line line3"></div>
-                    </div>                     
+                    </div>         
+                 
+                    
         </div>
     </header>
     <main class="main">
@@ -55,7 +60,7 @@
                         <h2 class="skills-items-title">
                             Digital photography
                         </h2>
-                        <p class="skills-item-text">
+                        <p class="skills-item-text" data-i18="skill-text-1">
                             High-quality photos in the studio and on the nature
                         </p>
                     </div>
@@ -99,18 +104,18 @@
                     <h2 class="section-title">Portfolio</h2>
                 </div>
                 <div class="portfolio-buttons-container">
-                    <button class="portfolio-btn main-btn">Winter</button>
-                    <button class="portfolio-btn main-btn">Spring</button>
-                    <button class="portfolio-btn main-btn">Summer</button>
-                    <button class="portfolio-btn-active portfolio-btn main-btn">Autumn</button>
+                    <button class="portfolio-btn main-btn winter" data-season="winter">Winter</button>
+                    <button class="portfolio-btn main-btn spring" data-season="spring">Spring</button>
+                    <button class="portfolio-btn main-btn summer" data-season="summer">Summer</button>
+                    <button class="portfolio-btn portfolio-btn-active main-btn autumn" data-season="autumn">Autumn</button>
                 </div>
                 <div class="portfolio-image-container">
-                    <img src="./assets/img/portfolio-img.jpg" alt="autumn-img" class="portfolio-img">
-                    <img src="./assets/img/portfolio-img-1.jpg" alt="autumn-img" class="portfolio-img">
-                    <img src="./assets/img/portfolio-img-2.jpg" alt="autumn-img" class="portfolio-img">
-                    <img src="./assets/img/portfolio-img-3.jpg" alt="autumn-img" class="portfolio-img">
-                    <img src="./assets/img/portfolio-img-4.jpg" alt="autumn-img" class="portfolio-img">
-                    <img src="./assets/img/portfolio-img-5.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/1.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/2.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/3.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/4.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/5.jpg" alt="autumn-img" class="portfolio-img">
+                    <img src="./assets/img/Autumn/6.jpg" alt="autumn-img" class="portfolio-img">
                 </div>
             </section>
             <section class="section video" id="video">
@@ -216,7 +221,7 @@
             </section>
             <section class="section contacts" id="contacts">
                 <form class="contacts-container" method="get">
-                    <h2 class="section-title title-contacts">Contact me</h2>
+                    <h2 class="section-title-contacts title-contacts">Contact me</h2>
                     <input class="contacts-input" type="email" name="email" id="email" placeholder="E-mail">
                     <input class="contacts-input" type="tel" name="phone" id="phone" placeholder="Phone" pattern="[0-9\/]*">
                     <textarea class="contacts-textarea" name="comments" id="comments" cols="30" rows="10" placeholder="Message"></textarea>
