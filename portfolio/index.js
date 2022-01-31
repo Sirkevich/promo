@@ -105,7 +105,10 @@ links.addEventListener('click',closeMenu);
 
 // console.log('блок header -- 6 балов \nблок hero -- 6 балов \nблок skills -- 6 балов \nблок portfolio -- 6 балов \nблок video -- 6 балов \nблок price -- 6 балов \nблок contacts -- 6 балов \nблок footer -- 6 балов \n\nнет полосы прокрутки при ширине страницы от 1440рх до 768рх -- 5 балов \nнет полосы прокрутки при ширине страницы от 768рх до 480рх -- 5 балов \nнет полосы прокрутки при ширине страницы от 480рх до 320рх -- 5 балов \n\nпри ширине страницы 768рх панель навигации скрывается, появляется бургер-иконка -- 2 бала \nпри нажатии на бургер-иконку справа плавно появляется адаптивное меню, бургер-иконка изменяется на крестик -- 4 бала \nпвысота адаптивного меню занимает всю высоту экрана. При ширине экрана 768-620рх вёрстка меню соответствует макету, когда экран становится уже, меню занимает всю ширину экрана -- 4 бала \nпри нажатии на крестик адаптивное меню плавно скрывается уезжая за правую часть экрана, крестик превращается в бургер-иконку -- 4 бала \nпри нажатии на крестик адаптивное меню плавно скрывается уезжая за правую часть экрана, крестик превращается в бургер-иконку -- 4 бала \nбургер-иконка, которая при клике превращается в крестик, создана при помощи css-анимаций без использования изображений -- 2 бала \nссылки в адаптивном меню работают, обеспечивая плавную прокрутку по якорям -- 2 бала \nпри клике по ссылке в адаптивном меню адаптивное меню плавно скрывается, крестик превращается в бургер-иконку -- 4бала');
 
-// ----------------------------------adding js----------------------------
+
+
+
+
 
 
 
@@ -154,64 +157,71 @@ document.querySelectorAll('.portfolio-btn').forEach(element => {
 
 
 
-
-  // var allBtns = document.querySelectorAll('button');
-
-  //   allBtns.forEach(item => {
-
-  //     // if (item.addEventListener('click')) {
-  //     //   if (item.classList.contains('portfolio-btn')) {
-  //     //       item.classList.remove('portfolio-btn-active');
-  //     //     }
-  //     // }
-
-  //     // function addActiveProp () {
-  //     // //  if (item.classList.contains('portfolio-btn')) {
-  //     // //   item.classList.remove('portfolio-btn-active');
-  //     // // }
-  //     // console.log(item)
-  //     // }
-  
-  //     // if (item.classList.contains('portfolio-btn')) {
-  //     //   item.classList.remove('portfolio-btn-active');
-  //     // }
-
-  //     if (item.classList.contains('winter')) {
-  //       item.addEventListener('click', addActiveProp);
-  //     }
-  // });
-
-
-
-
-
-
-
-
-
-
-
-
 // -------------------translate page---------------------
 
+// let btnlang = document.querySelector('.lang-ru');
 
-// function getTranslate() {
-//   const dataAtr = document.querySelectorAll('data-i18');
+// function changeLang (obj) {
 
-//   dataAtr.forEach(element => {
-    
-//   });
+//   for (let key in i18Obj) {
+//   //  for (let prop in i18Obj[key]) {
+//   //      console.log(i18Obj[prop])
+//   //  }
+//     console.log(key)
+// }
+//   // if (btnDark.classList.contains('theme-btn-dark')) {
+//   //   btnDark.classList.remove('theme-btn-dark');
+//   //   btnDark.classList.add('theme-btn-light');
+//   // } else {
+//   //   btnDark.classList.remove('theme-btn-light');
+//   //   btnDark.classList.add('theme-btn-dark');
+//   // }
 
 // }
 
+// btnlang.addEventListener('click', changeLang(i18Obj));
+// const langs = document.querySelector('.nav-languages'); // parent
+// const lang = document.querySelectorAll('.nav-language'); // each language
+
+// // select targeted language and translate depending on witch languaged user clicked
+// langs.addEventListener('click', (e) => {
+//   lang.forEach((btn) => btn.classList.remove('active-lang'));
+//   changeClassActiveLang(e.target);
+//   if(e.target.classList === 'ru') {
+//     getTranslate(i18Obj.ru);
+//   } else {
+//     getTranslate(i18Obj.en);
+//   }
+// });
+
+// function getTranslate(languages) {
+//   const data = document.querySelectorAll('[data-i18]');
+//   data.forEach((el) => {
+//     el.textContent = i18Obj[languages][el.dataset.i18];
+//   });
+// }
 
 
 
 // --------------------change theme------------------- 
 
+let btnDark = document.querySelector('.theme-btn-dark');
+
+function changeLogo () {
+  if (btnDark.classList.contains('theme-btn-dark')) {
+    btnDark.classList.remove('theme-btn-dark');
+    btnDark.classList.add('theme-btn-light');
+  } else {
+    btnDark.classList.remove('theme-btn-light');
+    btnDark.classList.add('theme-btn-dark');
+  }
+}
+
+btnDark.addEventListener('click', changeLogo);
+
 let arr = ['skills', 'portfolio', 'video', 'price'];
 
-let changeThemeBtn = document.querySelector('.theme-btn');
+let changeThemeBtn = document.querySelector('.theme-btn-dark');
 
 changeThemeBtn.addEventListener('click', changeTheme);
 
@@ -243,3 +253,24 @@ function changeTheme () {
     }
   });
 }
+
+//  let btnlang = document.querySelector('.lang-ru');
+
+// function changeLang (obj) {
+
+//   for (let key in i18Obj) {
+//   //  for (let prop in i18Obj[key]) {
+//   //      console.log(i18Obj[prop])
+//   //  }
+//     console.log(key)
+// }
+//   // if (btnDark.classList.contains('theme-btn-dark')) {
+//   //   btnDark.classList.remove('theme-btn-dark');
+//   //   btnDark.classList.add('theme-btn-light');
+//   // } else {
+//   //   btnDark.classList.remove('theme-btn-light');
+//   //   btnDark.classList.add('theme-btn-dark');
+//   // }
+
+// }
+

@@ -115,8 +115,7 @@ body {
         justify-content: flex-start;
         align-items: flex-start;
         margin: 0;
-        position: fixed;
-       
+        position: fixed;       
         top: -20px;
         bottom:0;
         width: 620px;
@@ -194,7 +193,7 @@ body {
 }
 
 .nav-link {
-    color: var(--link-color);
+    color: #fff;
     text-decoration: none;
 }
 
@@ -239,6 +238,10 @@ body {
         padding-right: 18px;
         padding-left: 9px;
 
+    }
+    
+    .nav-link {
+        color: var(--link-color);
     }
 }
 
@@ -290,14 +293,31 @@ body {
     background: var(--hamburger-color);
   }
 
-  .theme-btn {
+  .theme-btn-dark {
       margin-left: 30px;
       width: 45px;
       height: 45px;
       background:none;
       border: none;
       background-image: url(../assets/svg/carbon_sun.svg);
+      background-repeat: no-repeat;
+      transition: 0.2s;
   }
+
+  .theme-btn-light {
+    margin-left: 30px;
+    width: 45px;
+    height: 45px;
+    background:none;
+    border: none;
+    background-image: url(../assets/svg/dark.svg);
+    background-repeat: no-repeat;
+    transition: 0.2s;
+}
+
+
+
+
 
   .theme-btn:hover {
       cursor: pointer;
@@ -901,6 +921,8 @@ body {
 @media (max-width: 768px) {
     .footer-about-developer-text {
         margin-right: 2px;
+        text-decoration: none;
+        color: #fff;
     }
 }
 
@@ -911,6 +933,8 @@ body {
 
 .footer-about-company-text {
     padding-left: 14px;
+    text-decoration: none;
+    color: #fff;
     
 }
 
