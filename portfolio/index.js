@@ -20,16 +20,19 @@ const i18Obj = {
     'spring': 'Spring',
     'summer': 'Summer',
     'autumn': 'Autumn',
+    'standart':'Standart',
     'price-description-1-span-1': 'One location',
     'price-description-1-span-2': '120 photos in color',
     'price-description-1-span-3': '12 photos in retouch',
     'price-description-1-span-4': 'Readiness 2-3 weeks',
     'price-description-1-span-5': 'Make up, visage',
+    'premium':'Premium',
     'price-description-2-span-1': 'One or two locations',
     'price-description-2-span-2': '200 photos in color',
     'price-description-2-span-3': '20 photos in retouch',
     'price-description-2-span-4': 'Readiness 1-2 weeks',
     'price-description-2-span-5': 'Make up, visage',
+    'gold':'Gold',
     'price-description-3-span-1': 'Three locations or more',
     'price-description-3-span-2': '300 photos in color',
     'price-description-3-span-3': '50 photos in retouch',
@@ -60,16 +63,19 @@ const i18Obj = {
     'spring': 'Весна',
     'summer': 'Лето',
     'autumn': 'Осень',
+    'standart':'Базовый',
     'price-description-1-span-1': 'Одна локация',
     'price-description-1-span-2': '120 цветных фото',
     'price-description-1-span-3': '12 отретушированных фото',
     'price-description-1-span-4': 'Готовность через 2-3 недели',
     'price-description-1-span-5': 'Макияж, визаж',
+    'premium':'Премиальный',
     'price-description-2-span-1': 'Одна-две локации',
     'price-description-2-span-2': '200 цветных фото',
     'price-description-2-span-3': '20 отретушированных фото',
     'price-description-2-span-4': 'Готовность через 1-2 недели',
     'price-description-2-span-5': 'Макияж, визаж',
+    'gold':'Золотой',
     'price-description-3-span-1': 'Три локации и больше',
     'price-description-3-span-2': '300 цветных фото',
     'price-description-3-span-3': '50 отретушированных фото',
@@ -159,47 +165,51 @@ document.querySelectorAll('.portfolio-btn').forEach(element => {
 
 // -------------------translate page---------------------
 
-// let btnlang = document.querySelector('.lang-ru');
+// const ru = document.querySelector('.main-btn')
 
-// function changeLang (obj) {
+// const tTranslate = document.querySelectorAll('[data-i18]');
 
-//   for (let key in i18Obj) {
-//   //  for (let prop in i18Obj[key]) {
-//   //      console.log(i18Obj[prop])
-//   //  }
-//     console.log(key)
-// }
-//   // if (btnDark.classList.contains('theme-btn-dark')) {
-//   //   btnDark.classList.remove('theme-btn-dark');
-//   //   btnDark.classList.add('theme-btn-light');
-//   // } else {
-//   //   btnDark.classList.remove('theme-btn-light');
-//   //   btnDark.classList.add('theme-btn-dark');
-//   // }
-
-// }
-
-// btnlang.addEventListener('click', changeLang(i18Obj));
-// const langs = document.querySelector('.nav-languages'); // parent
-// const lang = document.querySelectorAll('.nav-language'); // each language
-
-// // select targeted language and translate depending on witch languaged user clicked
-// langs.addEventListener('click', (e) => {
-//   lang.forEach((btn) => btn.classList.remove('active-lang'));
-//   changeClassActiveLang(e.target);
-//   if(e.target.classList === 'ru') {
-//     getTranslate(i18Obj.ru);
-//   } else {
-//     getTranslate(i18Obj.en);
-//   }
-// });
-
-// function getTranslate(languages) {
-//   const data = document.querySelectorAll('[data-i18]');
-//   data.forEach((el) => {
-//     el.textContent = i18Obj[languages][el.dataset.i18];
+// function getTranslate () {
+  
+//   tTranslate.forEach((element) => {
+//     // if (element.contains(['data-i18'])) {
+//     //   console.log(dataset.i18);
+//     // }
+//     console.log(element.dataset.i18)
 //   });
-// }
+//   console.log(true)
+// };
+
+// ru.addEventListener ('click', getTranslate)
+
+
+
+
+
+
+
+const langArr = document.querySelectorAll("[data-i18]");
+const enLang = document.querySelector('.lang-en');
+const ruLang = document.querySelector('.lang-ru');
+
+function translateRussian(lang) {
+  lang = 'ru';
+  langArr.forEach((e) => {
+    e.textContent = i18Obj[lang][e.dataset.i18];
+  })
+}
+
+function translateEnglish(lang) {
+  lang = 'en';
+  langArr.forEach((e) => {
+    e.textContent = i18Obj[lang][e.dataset.i18];
+  })
+}
+// enLang.addEventListener('click', translate('en'));
+ruLang.addEventListener('click', translateRussian);
+enLang.addEventListener('click', translateEnglish);
+
+
 
 
 
