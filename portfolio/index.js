@@ -161,31 +161,15 @@ document.querySelectorAll('.portfolio-btn').forEach(element => {
   })
 })
 
+document.querySelectorAll('.language-link').forEach(element => {
+  element.addEventListener('click', item => {
+    document.querySelectorAll('.language-link').forEach(element => element.classList.remove('language-link-active'));
+    item.target.classList.add('language-link-active');
+  })
+})
 
 
 // -------------------translate page---------------------
-
-// const ru = document.querySelector('.main-btn')
-
-// const tTranslate = document.querySelectorAll('[data-i18]');
-
-// function getTranslate () {
-  
-//   tTranslate.forEach((element) => {
-//     // if (element.contains(['data-i18'])) {
-//     //   console.log(dataset.i18);
-//     // }
-//     console.log(element.dataset.i18)
-//   });
-//   console.log(true)
-// };
-
-// ru.addEventListener ('click', getTranslate)
-
-
-
-
-
 
 
 const langArr = document.querySelectorAll("[data-i18]");
@@ -211,10 +195,7 @@ function translateRussian(lang) {
   });
 }
 
-// function places () {
-//   place.placeholder = 'sdfdsf'
-//   // place.textContent = ''
-// }
+
 function translateEnglish(lang) {
   lang = 'en';
   langArr.forEach((e) => {
@@ -230,14 +211,9 @@ function translateEnglish(lang) {
 }
 })
 }
-// enLang.addEventListener('click', translate('en'));
+
 ruLang.addEventListener('click', translateRussian);
 enLang.addEventListener('click', translateEnglish);
-// place.addEventListener('click', places);
-
-
-
-
 
 
 // --------------------change theme------------------- 
@@ -290,24 +266,3 @@ function changeTheme () {
     }
   });
 }
-
-//  let btnlang = document.querySelector('.lang-ru');
-
-// function changeLang (obj) {
-
-//   for (let key in i18Obj) {
-//   //  for (let prop in i18Obj[key]) {
-//   //      console.log(i18Obj[prop])
-//   //  }
-//     console.log(key)
-// }
-//   // if (btnDark.classList.contains('theme-btn-dark')) {
-//   //   btnDark.classList.remove('theme-btn-dark');
-//   //   btnDark.classList.add('theme-btn-light');
-//   // } else {
-//   //   btnDark.classList.remove('theme-btn-light');
-//   //   btnDark.classList.add('theme-btn-dark');
-//   // }
-
-// }
-

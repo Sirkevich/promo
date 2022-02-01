@@ -218,6 +218,11 @@ body {
     text-decoration: none;
 }
 
+.language-link:hover {
+
+    color: #bdae82;
+}
+
 .language-link-active {
     color: var(--color-gold); 
 }
