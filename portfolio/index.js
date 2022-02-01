@@ -192,22 +192,49 @@ const langArr = document.querySelectorAll("[data-i18]");
 const enLang = document.querySelector('.lang-en');
 const ruLang = document.querySelector('.lang-ru');
 
+const place = document.querySelectorAll('.contacts-field')
+
 function translateRussian(lang) {
   lang = 'ru';
   langArr.forEach((e) => {
     e.textContent = i18Obj[lang][e.dataset.i18];
+   
   })
+  place.forEach(item => {
+    if (item.placeholder === 'E-mail') {
+      item.placeholder = 'Почта';
+    } else if (item.placeholder === 'Phone') {
+      item.placeholder = 'Телефон'; 
+  } else if (item.placeholder === 'Message') {
+    item.placeholder = 'Cообщение';  
+}
+  });
 }
 
+// function places () {
+//   place.placeholder = 'sdfdsf'
+//   // place.textContent = ''
+// }
 function translateEnglish(lang) {
   lang = 'en';
   langArr.forEach((e) => {
     e.textContent = i18Obj[lang][e.dataset.i18];
   })
+  place.forEach(item => {
+    if (item.placeholder === 'Почта') {
+      item.placeholder = 'E-mail';
+    } else if (item.placeholder === 'Телефон') {
+      item.placeholder = 'Phone'; 
+  } else if (item.placeholder === 'Cообщение') {
+    item.placeholder = 'Message';  
+}
+})
 }
 // enLang.addEventListener('click', translate('en'));
 ruLang.addEventListener('click', translateRussian);
 enLang.addEventListener('click', translateEnglish);
+// place.addEventListener('click', places);
+
 
 
 
